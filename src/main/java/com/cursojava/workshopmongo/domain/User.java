@@ -2,8 +2,15 @@ package com.cursojava.workshopmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+// Indica que se trata de uma coleção do MongoDB
+// Pode usar também o @Document(collection = "NOME_DA_COLEÇÃO_NO_BANCO") se não usar o spring vai mapear com o nome da classe em minúscula
+@Document(collection = "user")
 public class User implements Serializable {
     
+    @Id // Indica o atributo que é a chave 
     private String id;
     private String name;
     private String email;
