@@ -60,7 +60,6 @@ public class UserResource {
     }
 
     @PutMapping(value = "/{id}")
-    // @RequestBody faz com que o endpoint aceite um objeto
     public ResponseEntity<Void> update(@RequestBody UserDTO objDto, @PathVariable String id) {
         User obj = service.fromDTO(objDto);
         obj.setId(id);
